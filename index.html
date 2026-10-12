@@ -23,6 +23,10 @@
     background: #E8F0FE; border-radius: 12px; padding: 16px 20px;
     color: #174ea6; font-weight: 600; margin: 0 0 8px;
   }
+  .note {
+    background: #FEF7E0; border: 1px solid #F0D48A; border-radius: 12px;
+    padding: 14px 18px; color: #7A5B00;
+  }
   code { background: #f1f3f4; padding: 2px 6px; border-radius: 4px; font-size: 15px; }
   a { color: #208AEF; word-break: break-all; }
   @media (prefers-color-scheme: dark) {
@@ -30,6 +34,7 @@
     .sub { color: #9aa0a6; } .updated { color: #9aa0a6; }
     h2 { border-top-color: #2a2a2a; }
     .lead { background: #1a2634; color: #8ab4f8; }
+    .note { background: #2a2413; border-color: #5a4a1a; color: #e8d08a; }
     code { background: #2a2a2a; }
   }
 </style>
@@ -38,45 +43,64 @@
 
 <h1>隐私政策</h1>
 <p class="sub">毛发移植小工具（Scar Graft Planner）</p>
-<p class="updated">最后更新：2026 年 10 月 11 日</p>
+<p class="updated">最后更新：2026 年 10 月 12 日</p>
 
-<p class="lead">一句话总结：本应用不收集、不上传、不共享任何数据。所有内容都留在你自己的设备上。</p>
+<p class="lead">一句话总结：本应用不联网，不会向开发者上传或共享任何数据。你在应用内产生的内容，只保存在你自己的设备上。</p>
 
 <h2>1. 我们收集哪些数据</h2>
 <p><strong>不收集任何数据。</strong></p>
-<p>本应用没有账号系统，没有统计分析，没有广告，没有崩溃上报，也没有连接任何服务器。我们无法、也不会获取你设备上的任何信息。</p>
+<p>本应用没有账号系统，没有统计分析，没有广告，没有崩溃上报，也<strong>没有任何联网代码</strong>。我们无法、也不会获取你设备上的任何信息。</p>
 
 <h2>2. 照片和病例数据存在哪里</h2>
 <p>当你在应用内保存病例时，照片和你录入的数据（标定比例、瘢痕轮廓、种植密度、备注）会被写入<strong>本应用在你这台设备上的私有存储目录</strong>。</p>
 <p>这些数据：</p>
 <ul>
-  <li>只存在于你的设备上</li>
-  <li><strong>不会上传到任何服务器</strong></li>
-  <li>不会与任何第三方共享</li>
+  <li>只保存在你本人的设备上</li>
+  <li>本应用自身不联网，<strong>不会向我们或任何第三方上传、共享</strong></li>
   <li>在你<strong>卸载本应用时会被一并删除</strong></li>
 </ul>
 
-<h2>3. 使用的设备权限</h2>
+<h2>3. 关于设备备份（重要说明）</h2>
+<p class="note">iOS 默认会把应用数据纳入 <strong>iCloud 云备份</strong>。因此，本应用保存的照片与病例，<strong>可能随你设备的备份上传到你自己的 iCloud 账户</strong>。</p>
+<p>为避免误解，说明几点：</p>
+<ul>
+  <li>那是<strong>你个人的 iCloud 账户</strong>，由 Apple 提供。<strong>开发者没有任何访问权限</strong>。</li>
+  <li>这<strong>不是本应用发起的网络传输</strong> —— 本应用不含任何联网代码，无法主动上传任何内容。</li>
+  <li>如果不希望这些数据进入云备份，可在「设置 → 你的名字 → iCloud → iCloud 云备份」中关闭备份。</li>
+</ul>
+<p>此外，从本应用<strong>导出并保存到系统「照片」</strong>的报告图片，会像你其他照片一样受 iCloud 照片同步的影响。是否导出、保存到哪里，由你自己决定。</p>
+
+<h2>4. 使用的设备权限</h2>
 <ul>
   <li><strong>相机</strong>：用于拍摄瘢痕照片。仅在你主动点击「拍照」时使用。</li>
   <li><strong>照片图库</strong>：用于从相册中选取已有照片。仅在你主动点击「从相册选择」时使用。</li>
+  <li><strong>Face ID / 设备密码</strong>：用于验证身份、解锁本应用（见下一节）。仅用于本机验证，生物特征数据不会离开你的设备。</li>
 </ul>
 <p>本应用不会在后台访问相机或照片图库。</p>
 
-<h2>4. 导出与分享</h2>
+<h2>5. 应用锁</h2>
+<p>由于本应用可能保存患者的照片，打开时需要验证身份：</p>
+<ul>
+  <li>冷启动时，以及在后台停留较长时间后返回时，会要求 Face ID（或设备密码）验证</li>
+  <li>应用离开前台时，画面会被遮住，以免在系统应用切换器中露出患者照片</li>
+  <li>验证由 iOS 系统完成，本应用只能得到「通过 / 未通过」的结果，接触不到你的生物特征数据</li>
+</ul>
+<p>如果你的设备<strong>没有设置开机密码</strong>，系统无法完成验证，此时应用会明确提示，由你决定是否继续使用。我们建议先设置设备密码。</p>
+
+<h2>6. 导出与分享</h2>
 <p>当你主动使用「导出」功能时，生成的图片会交给你设备上的系统分享面板，由你自己决定发送给谁。</p>
 <p><strong>请注意：一旦你选择了分享，这张图片就离开了本应用的控制范围。</strong>是否分享、分享给谁，完全由你判断，也请你遵守所在地关于患者隐私的法律法规。</p>
 
-<h2>5. 儿童</h2>
+<h2>7. 儿童</h2>
 <p>本应用面向医疗专业人员，不面向儿童，也不会有意收集儿童的任何信息。</p>
 
-<h2>6. 免责声明</h2>
+<h2>8. 免责声明</h2>
 <p>本应用是一款<strong>估算工具</strong>，提供的结果仅供参考，<strong>不替代临床判断</strong>，也不提供医疗诊断或治疗建议。</p>
 
-<h2>7. 本政策的变更</h2>
-<p>如果本政策有变更，我们会更新本页面顶部的日期。由于本应用不收集任何数据，变更的可能性很低。</p>
+<h2>9. 本政策的变更</h2>
+<p>如果本政策有变更，我们会更新本页面顶部的日期。</p>
 
-<h2>8. 联系方式</h2>
+<h2>10. 联系方式</h2>
 <p>如有任何疑问，或希望反馈使用中的问题，欢迎在本项目的反馈页面留言：</p>
 <p><a href="https://github.com/416465879-stack/privacy-policy/issues">https://github.com/416465879-stack/privacy-policy/issues</a></p>
 
